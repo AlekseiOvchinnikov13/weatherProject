@@ -1,0 +1,18 @@
+.btn {
+  background-color: white;
+  color: #5887ff;
+
+  padding: 15px 30px;
+  border-radius: 25px;
+  box-shadow: 15px 15px 30px #999999, -15px -15px 30px #ffffff;
+  border: none;
+
+  &:hover {
+    cursor: pointer;
+  }
+}
+
+.invert {
+  background-color: #5887ff;
+  color: white;
+}

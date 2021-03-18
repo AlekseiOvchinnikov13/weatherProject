@@ -1,0 +1,38 @@
+.card-wrapper {
+  min-height: 75px;
+  height: 100%;
+  min-width: 500px;
+
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 20px;
+  background-color: white;
+  color: #5887ff;
+  border-radius: 25px;
+  box-shadow: 15px 15px 30px #999999, -15px -15px 30px #ffffff;
+  transition: all .3s;
+
+  &:hover {
+    transform: translate(-5px, -5px);
+    cursor: pointer;
+  }
+
+  &__place {
+    flex-basis: 70%;
+  }
+
+  &__temp {
+    flex-basis: 15%;
+  }
+
+  &__icon {
+    flex-basis: 15%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 75px;
+  }
+}

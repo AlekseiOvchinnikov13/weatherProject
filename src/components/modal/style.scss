@@ -18,9 +18,9 @@
   color: #5887ff;
   border-radius: 25px;
   padding: 10px 20px 20px 20px;
-  min-width: 700px;
-  max-width: 750px;
-  min-height: 600px;
+  min-width: 500px;
+  max-width: 600px;
+  min-height: 500px;
   max-height: 80vh;
 
   display: flex;
@@ -40,12 +40,7 @@
     }
   }
 
-  .modal-body {
-    padding: 10px 15px;
-
-  }
-
-  .modal-footer{
+  .modal-footer {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -53,8 +48,14 @@
   }
 }
 
-@media (max-width: 700px) {
+@media (max-width: 800px) {
   .modal-window {
     min-width: 90%;
+  }
+}
+
+@media (max-width: 600px) {
+  .modal-window .modal-footer {
+    width: 80%;
   }
 }

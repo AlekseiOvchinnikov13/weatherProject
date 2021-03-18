@@ -2,6 +2,7 @@ import React, {useEffect} from "react";
 import PropTypes from 'prop-types';
 import Btn from "../btn";
 import './style.scss';
+import InputText from "../inputText";
 
 const Modal = ({title, isOpen, onCancel, onSubmit}: any) => {
     useEffect(() => {
@@ -27,7 +28,7 @@ const Modal = ({title, isOpen, onCancel, onSubmit}: any) => {
                         <div className="modal-close" onClick={onCancel}>×</div>
                     </div>
                     <div className="modal-body">
-
+                        <InputText/>
                     </div>
                     <div className="modal-footer">
                         <Btn title={'Добавить'} onClick={onSubmit} invert/>
@@ -42,16 +43,12 @@ const Modal = ({title, isOpen, onCancel, onSubmit}: any) => {
 
 Modal.propTypes = {
     title: PropTypes.string,
-    isOpen: PropTypes.bool,
-    onCancel: PropTypes.func,
-    onSubmit: PropTypes.func,
+    isOpen: PropTypes.bool.isRequired,
+    onCancel: PropTypes.func.isRequired,
+    onSubmit: PropTypes.func.isRequired,
 };
 Modal.defaultProps = {
     title: "Добавить",
-    onCancel: () => {
-    },
-    onSubmit: () => {
-    },
 };
 
 export default Modal;

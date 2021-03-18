@@ -3,18 +3,28 @@ import {CurrentWeather} from "../interface/CurrentWeather";
 
 class Store {
     @observable currentWeather: CurrentWeather = <CurrentWeather>{};
-
     @action setCurrentWeather = (weather: CurrentWeather) => {
+        this.currentWeather.id = weather.id;
         this.currentWeather.name = weather.name;
         this.currentWeather.main = weather.main;
         this.currentWeather.weather = weather.weather;
-    }
+    };
 
-    @observable location : CurrentWeather[] = <CurrentWeather[]>{};
+    @observable locations: CurrentWeather[] = [];
+    @action addLocation = (weather: CurrentWeather) => {
+        this.locations.find(element => weather.name === element.name)
+            ? console.log(`Карточка погоды в городе ${weather.name} уже добавлена`)
+            : this.locations.push(weather);
+    };
+    @action deleteLocation = (id: number) => {
+        this.locations = this.locations.filter((element) => {
+            return element.id !== id;
+        });
+    };
 
-    @action setLocation = (weather: CurrentWeather) => {
+    @observable selectedCity: string = '';
+    @action setSelectedCity = (name: string) => this.selectedCity = name;
 
-    }
 }
 
 const WeatherStore = new Store();

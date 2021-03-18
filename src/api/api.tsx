@@ -6,6 +6,7 @@ const API_key = '46329390d425d0a34e2d1f8601c85566';
 export const getGeoWeather: (props: any) => Promise<CurrentWeather | void> = (props: any) => {
     const lat: number = props.lat;
     const lon: number = props.lon;
+
     const url = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&lang=ru&units=metric&appid=${API_key}`;
 
     return axios.get(url)
@@ -15,3 +16,14 @@ export const getGeoWeather: (props: any) => Promise<CurrentWeather | void> = (pr
         })
         .catch(err => console.log(err))
 };
+
+export const getGeoWeatherByName: (cityName: string) => Promise<CurrentWeather | void> = (cityName) => {
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&lang=ru&units=metric&appid=${API_key}`;
+
+    return axios.get(url)
+        .then(response => {
+            let currentWeather = new CurrentWeather(response.data);
+            return (currentWeather);
+        })
+        .catch(() => console.log(`Город ${cityName} не найден.`))
+}

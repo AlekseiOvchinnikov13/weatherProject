@@ -1,9 +1,10 @@
 import React from 'react'
 import CurrentWeatherCard from "../currentWeatherCard";
 import AddCardButton from "../addCardBtn";
-import {inject, observer} from "mobx-react";
 import {getGeoWeather} from "../../api/api";
 import {CurrentWeather} from "../../interface/CurrentWeather";
+import WeatherCard from "../weatherCard";
+import {inject, observer} from "mobx-react";
 
 interface IStateContainer {
     loading: boolean,
@@ -14,17 +15,6 @@ interface IStateContainer {
 }
 
 class Container extends React.Component<any, IStateContainer> {
-    /*constructor(props: any) {
-        super(props);
-        this.state = {
-            loading: true,
-            position: {
-                lat: 0,
-                lon: 0
-            }
-        }
-    }*/
-
     state: IStateContainer = {
         loading: true,
         position: {
@@ -51,15 +41,24 @@ class Container extends React.Component<any, IStateContainer> {
 
     componentDidMount() {
         navigator.geolocation.getCurrentPosition(this.success);
+        console.log('locations', this.props.store.locations);
     }
 
     render() {
         const {loading} = this.state;
         if (loading) return null
 
+
+        const allWeatherCards = this.props.store.locations.map((item: any) => {
+            <div>{item}</div>
+        })
+
         return (
             <div className={'container'}>
                 <CurrentWeatherCard/>
+                {allWeatherCards}
+
+                {/*{console.log(allWeatherCards)}*/}
                 <AddCardButton/>
             </div>
         );

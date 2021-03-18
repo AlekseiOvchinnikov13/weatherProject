@@ -5,16 +5,16 @@ import {inject, observer} from "mobx-react";
 import {getGeoWeather} from "../../api/api";
 import {CurrentWeather} from "../../interface/CurrentWeather";
 
-interface stateContainer {
+interface IStateContainer {
     loading: boolean,
-    position?: {
+    position: {
         lat: number,
         lon: number
     }
 }
 
-class Container extends React.Component<any, stateContainer> {
-    constructor(props: stateContainer) {
+class Container extends React.Component<any, IStateContainer> {
+    /*constructor(props: any) {
         super(props);
         this.state = {
             loading: true,
@@ -22,6 +22,14 @@ class Container extends React.Component<any, stateContainer> {
                 lat: 0,
                 lon: 0
             }
+        }
+    }*/
+
+    state: IStateContainer = {
+        loading: true,
+        position: {
+            lat: 0,
+            lon: 0
         }
     }
 
@@ -32,7 +40,8 @@ class Container extends React.Component<any, stateContainer> {
                 lon: longitude.toFixed(4)
             }
         });
-        getGeoWeather(this.state.position)
+        const {position} = this.state;
+        getGeoWeather(position)
             .then(response => {
                 this.props.store.setCurrentWeather(response as CurrentWeather)
                 this.setState({loading: false});

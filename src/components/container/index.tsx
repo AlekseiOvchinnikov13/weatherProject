@@ -5,6 +5,7 @@ import {getGeoWeather} from "../../api/api";
 import {CurrentWeather} from "../../interface/CurrentWeather";
 import {inject, observer} from "mobx-react";
 import WeatherCard from "../weatherCard";
+import './style.scss';
 
 const Container = inject('store')(observer((props: any) => {
     const [loading, setLoading] = useState(true);

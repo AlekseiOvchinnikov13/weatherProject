@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import Btn from "../btn";
 import './style.scss';
 import InputText from "../inputText";
+import {inject, observer} from "mobx-react";
 
 const Modal = ({title, isOpen, onCancel, onSubmit}: any) => {
     useEffect(() => {
@@ -51,4 +52,4 @@ Modal.defaultProps = {
     title: "Добавить",
 };
 
-export default Modal;
+export default inject('store')(observer(Modal));

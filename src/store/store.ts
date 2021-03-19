@@ -1,4 +1,4 @@
-import {action, observable} from 'mobx'
+import {action, observable, computed} from 'mobx'
 import {CurrentWeather} from "../interface/CurrentWeather";
 
 class Store {
@@ -11,7 +11,7 @@ class Store {
     };
 
     @observable locations: CurrentWeather[] = [];
-    @action addLocation = (weather: CurrentWeather) => {
+    @action addLocation (weather: CurrentWeather) {
         this.locations.find(element => weather.name === element.name)
             ? console.log(`Карточка погоды в городе ${weather.name} уже добавлена`)
             : this.locations.push(weather);
@@ -24,8 +24,6 @@ class Store {
 
     @observable selectedCity: string = '';
     @action setSelectedCity = (name: string) => this.selectedCity = name;
-
 }
 
-const WeatherStore = new Store();
-export default WeatherStore;
+export default new Store();

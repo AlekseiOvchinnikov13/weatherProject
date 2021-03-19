@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {inject, observer} from "mobx-react";
+import {action} from 'mobx';
 import './style.scss';
 import Modal from "../modal";
 import {getGeoWeatherByName} from "../../api/api";
@@ -7,13 +8,15 @@ import {CurrentWeather} from "../../interface/CurrentWeather";
 
 const AddCardButton = (props: any) => {
     const [isOpen, setIsOpen] = useState(false);
-    const handlerModal = () => setIsOpen(!isOpen);
+    const handlerModal = () => {
+        setIsOpen(!isOpen);
+    }
     const submitModal = () => {
         if (props.store.selectedCity){
             getGeoWeatherByName(props.store.selectedCity)
-                .then(response => {
+                .then(action(response => {
                     props.store.addLocation(response as CurrentWeather)
-                })
+                }))
                 .catch(error => console.log(error))
             setIsOpen(!isOpen);
             props.store.setSelectedCity('');

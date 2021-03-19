@@ -8,11 +8,10 @@ import {CurrentWeather} from "../../interface/CurrentWeather";
 
 const AddCardButton = (props: any) => {
     const [isOpen, setIsOpen] = useState(false);
-    const handlerModal = () => {
-        setIsOpen(!isOpen);
-    }
+    const handlerModal = () => setIsOpen(!isOpen);
+
     const submitModal = () => {
-        if (props.store.selectedCity){
+        if (props.store.selectedCity) {
             getGeoWeatherByName(props.store.selectedCity)
                 .then(action(response => {
                     props.store.addLocation(response as CurrentWeather)
@@ -20,8 +19,7 @@ const AddCardButton = (props: any) => {
                 .catch(error => console.log(error))
             setIsOpen(!isOpen);
             props.store.setSelectedCity('');
-        }
-        else console.log('Введите название города.');
+        } else console.log('Введите название города.');
     };
 
     return (

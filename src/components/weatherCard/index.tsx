@@ -11,7 +11,7 @@ const WeatherCard = inject('store')(observer((props: any) => {
                     {item.name}
                 </div>
                 <div className='card-wrapper__temp'>
-                    {item.store.currentWeather.main.temp} &#8451;
+                    {item.main.temp} &#8451;
                 </div>
 
                 <div className='card-wrapper__icon'

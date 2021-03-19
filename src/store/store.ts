@@ -10,7 +10,7 @@ class Store {
         this.currentWeather.weather = weather.weather;
     };
 
-    @observable locations: CurrentWeather[] = [];
+    @observable locations: CurrentWeather[] = observable.array();
     @action addLocation (weather: CurrentWeather) {
         this.locations.find(element => weather.name === element.name)
             ? console.log(`Карточка погоды в городе ${weather.name} уже добавлена`)

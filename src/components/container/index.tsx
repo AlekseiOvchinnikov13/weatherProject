@@ -6,7 +6,6 @@ import {CurrentWeather} from "../../interface/CurrentWeather";
 import {inject, observer} from "mobx-react";
 import WeatherCard from "../weatherCard";
 
-
 const Container = inject('store')(observer((props: any) => {
     const [loading, setLoading] = useState(true);
     const [position, setPosition] = useState({lat: 0, lon: 0});
@@ -34,18 +33,11 @@ const Container = inject('store')(observer((props: any) => {
 
 
     if (loading) return null;
-    debugger;
-    // const allWeatherCards = props.store.location.map((item: any) =>
-    //     <WeatherCard key={'sdfsdf'} {...item}/>
-    // );
 
     return (
         <div className={'container'}>
             <CurrentWeatherCard/>
             <WeatherCard />
-            {/*{props.store.location.map((item: any) =>*/}
-            {/*    <WeatherCard {...item}/>*/}
-            {/*)}*/}
             <AddCardButton/>
         </div>
     );

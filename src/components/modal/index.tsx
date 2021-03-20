@@ -40,7 +40,7 @@ const Modal = ({title, isOpen, onCancel, onSubmit}: any) => {
             }
         </>
     )
-}
+};
 
 Modal.propTypes = {
     title: PropTypes.string,

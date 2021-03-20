@@ -7,7 +7,7 @@ import {inject, observer} from "mobx-react";
 import WeatherCard from "../weatherCard";
 import './style.scss';
 
-const Container = inject('store')(observer((props: any) => {
+const Container = (props: any) => {
     const [loading, setLoading] = useState(true);
     const [position, setPosition] = useState({lat: 0, lon: 0});
 
@@ -42,7 +42,7 @@ const Container = inject('store')(observer((props: any) => {
             <AddCardButton/>
         </div>
     );
-}));
+};
 
-export default Container;
+export default inject('store')(observer(Container));
 

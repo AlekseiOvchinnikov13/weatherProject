@@ -2,7 +2,7 @@ import {action, observable} from 'mobx'
 import {CurrentWeather} from "../interface/CurrentWeather";
 
 class Store {
-    @observable currentWeather: CurrentWeather = <CurrentWeather>{};
+    @observable currentWeather: CurrentWeather = {} as CurrentWeather;
     @action setCurrentWeather = (weather: CurrentWeather) => {
         this.currentWeather.id = weather.id;
         this.currentWeather.name = weather.name;
@@ -16,7 +16,7 @@ class Store {
             ? console.log(`Карточка погоды в городе ${weather.name} уже добавлена`)
             : this.locations.push(weather);
     };
-    @action deleteLocation = (id: number) => {
+    @action deleteLocation = (id: Number) => {
         this.locations = this.locations.filter((element) => {
             return element.id !== id;
         });

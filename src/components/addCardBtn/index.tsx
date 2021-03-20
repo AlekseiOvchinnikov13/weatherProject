@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import {inject, observer} from "mobx-react";
 import {action} from 'mobx';
 import './style.scss';
@@ -34,6 +34,6 @@ const AddCardButton = (props: any) => {
             <Modal onCancel={handlerModal} isOpen={isOpen} onSubmit={submitModal}/>
         </>
     )
-}
+};
 
 export default inject('store')(observer(AddCardButton));

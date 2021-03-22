@@ -1,7 +1,11 @@
-import {action, observable} from 'mobx'
+import {action, makeObservable, observable} from 'mobx'
 import {CurrentWeather} from "../interface/CurrentWeather";
 
 class Store {
+    constructor() {
+        makeObservable(this);
+    }
+
     @observable currentWeather: CurrentWeather = {} as CurrentWeather;
     @action setCurrentWeather = (weather: CurrentWeather) => {
         this.currentWeather.id = weather.id;

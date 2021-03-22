@@ -31,7 +31,7 @@ const AddCardButton = (props: any) => {
                      }}/>
                 <p className="btn-wrapper__text">Добавить</p>
             </button>
-            <Modal onCancel={handlerModal} isOpen={isOpen} onSubmit={submitModal}/>
+            <Modal onCancel={handlerModal} isOpen={isOpen} onSubmit={submitModal} title={'Добавить'}/>
         </>
     )
 };

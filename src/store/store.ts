@@ -1,5 +1,6 @@
 import {action, makeObservable, observable} from 'mobx'
 import {CurrentWeather} from "../interface/CurrentWeather";
+import {ForecastWeather} from "../interface/ForecastWeather";
 
 class Store {
     constructor() {
@@ -12,6 +13,7 @@ class Store {
         this.currentWeather.name = weather.name;
         this.currentWeather.main = weather.main;
         this.currentWeather.weather = weather.weather;
+        this.currentWeather.coord = weather.coord;
     };
 
     @observable locations: CurrentWeather[] = observable.array();
@@ -28,6 +30,12 @@ class Store {
 
     @observable selectedCity: string = '';
     @action setSelectedCity = (name: string) => this.selectedCity = name;
+
+    @observable forecast: ForecastWeather = {} as ForecastWeather;
+    @action setForecast = (element: ForecastWeather) => {
+        this.forecast = element;
+    }
+
 }
 
 export default new Store();

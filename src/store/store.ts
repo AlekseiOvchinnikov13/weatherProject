@@ -35,6 +35,9 @@ class Store {
     @action setForecast = (element: ForecastWeather) => {
         this.forecast = element;
     }
+    @action clearForecast = () => {
+        this.forecast = {} as ForecastWeather;
+    }
 
 }
 

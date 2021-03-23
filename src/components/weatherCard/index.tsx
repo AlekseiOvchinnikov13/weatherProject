@@ -13,7 +13,10 @@ const WeatherCard = (props: any) => {
     };
     const [isOpen, setIsOpen] = useState(false);
     const [title, setTitle] = useState('');
-    const handlerModal = () => setIsOpen(!isOpen);
+    const handlerModal = () => {
+        props.store.clearForecast();
+        setIsOpen(!isOpen);
+    }
 
     const openCurrentCard = (item: CurrentWeather) => {
         setTitle(item.name);

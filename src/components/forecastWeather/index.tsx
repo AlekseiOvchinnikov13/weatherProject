@@ -1,5 +1,6 @@
 import React from 'react'
 import {inject, observer} from "mobx-react";
+import './style.scss';
 
 const ForecastWeather = (props: any) => {
     const {today, tomorrow} = props.store.forecast;
@@ -12,7 +13,7 @@ const ForecastWeather = (props: any) => {
             <div className="forecast-weather">
                 <div className="forecast-title">{forecast[0]}</div>
                 <div className="forecast-inner">
-                    <div className="forecast-temp">{today.temp} &#8451;</div>
+                    <div className="forecast-temp">{Math.round(today.temp)} &#8451;</div>
                     <div
                         className="forecast-icon"
                         style={{
@@ -20,11 +21,12 @@ const ForecastWeather = (props: any) => {
                         }}
                     />
                 </div>
+                <div className="graphic"></div>
             </div>
             <div className="forecast-weather">
                 <div className="forecast-title">{forecast[1]}</div>
                 <div className="forecast-inner">
-                    <div className="forecast-temp">{tomorrow.temp} &#8451;</div>
+                    <div className="forecast-temp">{Math.round(tomorrow.temp.day)} &#8451;</div>
                     <div
                         className="forecast-icon"
                         style={{
@@ -32,6 +34,7 @@ const ForecastWeather = (props: any) => {
                         }}
                     />
                 </div>
+                <div className="graphic"></div>
             </div>
         </div>
     )

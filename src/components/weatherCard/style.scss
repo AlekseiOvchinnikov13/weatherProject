@@ -22,4 +22,33 @@
   }
 }
 
+@media (max-width: 680px) {
+  .card-wrapper {
+    min-width: 300px;
+    max-width: 300px;
+    min-height: 50px;
+    padding: 10px;
+
+    &__icon {
+      height: 50px;
+    }
+  }
+  .weather-card .btn {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 430px) {
+  .card-wrapper {
+    min-width: 250px;
+    max-width: 250px;
+    min-height: 35px;
+    padding: 7px;
+  }
+  .weather-card .card-wrapper {
+    margin-right: 15px;
+  }
+}
+
 

@@ -1,10 +1,10 @@
-import {action, makeObservable, observable} from 'mobx'
+import {action, makeAutoObservable, observable} from 'mobx'
 import {CurrentWeather} from "../interface/CurrentWeather";
 import {ForecastWeather} from "../interface/ForecastWeather";
 
 class Store {
     constructor() {
-        makeObservable(this);
+        makeAutoObservable(this);
     }
 
     @observable currentWeather: CurrentWeather = {} as CurrentWeather;

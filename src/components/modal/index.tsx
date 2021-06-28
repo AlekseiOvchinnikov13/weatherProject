@@ -19,7 +19,7 @@ const Modal = ({title, isOpen, onCancel, onSubmit, isAdding}: any) => {
 
     useEffect(() => {
         !isAdding && setTitleCancelBtn('Закрыть');
-    }, [])
+    }, [isAdding])
 
     const clickOutside = (e: any) => {
         if (isOpen && (e.target.className === 'modal-overlay' || e.target.className === 'modal-close')) {

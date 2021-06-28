@@ -30,7 +30,7 @@ const Container = (props: any) => {
                     setLoading(false);
                 })
                 .catch(console.log)
-    }, [position.lat, position.lon])
+    }, [position.lat, position.lon, props.store, position])
 
 
     if (loading) return null;

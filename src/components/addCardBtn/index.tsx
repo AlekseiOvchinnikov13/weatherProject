@@ -25,11 +25,7 @@ const AddCardButton = (props: any) => {
     return (
         <>
             <button className="btn-wrapper" onClick={handlerModal}>
-                <div className="btn-wrapper__icon"
-                     style={{
-                         backgroundImage: `url('https://cdn1.iconfinder.com/data/icons/utilities-part-1/64/add_1-512.png')`
-                     }}/>
-                <p className="btn-wrapper__text">Добавить</p>
+                Добавить
             </button>
             <Modal onCancel={handlerModal} isOpen={isOpen} onSubmit={submitModal} title={'Добавить'}/>
         </>

@@ -1,8 +1,8 @@
+@import "../../styles/vars";
+
 .card-wrapper {
-  min-height: 75px;
-  height: 100%;
-  min-width: 500px;
-  max-width: 500px;
+  width: 500px;
+  height: 100px;
 
   display: flex;
   flex-wrap: nowrap;
@@ -10,10 +10,11 @@
   justify-content: space-between;
 
   padding: 20px;
-  background-color: white;
-  color: #5887ff;
-  border-radius: 25px;
-  box-shadow: 15px 15px 30px #999999, -15px -15px 30px #ffffff;
+  margin-top: 25px;
+
+  background-color: $OCEAN_GREEN;
+  color: $DARK_JUNGLE_GREEN;
+  border-radius: $BORDER_RADIUS;
   transition: all .3s;
 
   &:hover {
@@ -35,5 +36,11 @@
     background-position: center;
     background-size: cover;
     height: 75px;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-wrapper {
+    height: 65px;
   }
 }

@@ -1,20 +1,33 @@
+@import "../../styles/vars";
+
 .btn {
-  background-color: white;
-  color: #5887ff;
+  color: $NYANZA_COLOR;
+  background-color: $DARK_JUNGLE_GREEN;
+  border: 1px solid $NYANZA_COLOR;
 
   padding: 15px 30px;
-  border-radius: 25px;
-  box-shadow: 15px 15px 30px #999999, -15px -15px 30px #ffffff;
-  border: none;
+  border-radius: $BORDER_RADIUS_SMALL;
 
-  &:hover {
+  transition: .4s ease-in-out all;
+
+  &:hover, &:focus {
+    color: $DARK_JUNGLE_GREEN;
+    background-color: $NYANZA_COLOR;
+    border: 1px solid $DARK_JUNGLE_GREEN;
     cursor: pointer;
   }
 }
 
 .invert {
-  background-color: #5887ff;
-  color: white;
+  color: $DARK_JUNGLE_GREEN;
+  background-color: $NYANZA_COLOR;
+  border: 1px solid $DARK_JUNGLE_GREEN;
+
+  &:hover, &:focus {
+    color: $NYANZA_COLOR;
+    background-color: $DARK_JUNGLE_GREEN;
+    border: 1px solid $NYANZA_COLOR;
+  }
 }
 
 .one-button {

@@ -36,11 +36,13 @@ const Container = (props: any) => {
     if (loading) return null;
 
     return (
-        <div className={'container'}>
-            <CurrentWeatherCard/>
-            <WeatherCard />
+        <>
+            <div className={'container'}>
+                <CurrentWeatherCard/>
+                <WeatherCard />
+            </div>
             <AddCardButton/>
-        </div>
+        </>
     );
 };
 

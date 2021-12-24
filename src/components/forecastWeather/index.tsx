@@ -21,7 +21,6 @@ const ForecastWeather = (props: any) => {
                         }}
                     />
                 </div>
-                <div className="graphic"></div>
             </div>
             <div className="forecast-weather">
                 <div className="forecast-title">{forecast[1]}</div>
@@ -34,7 +33,6 @@ const ForecastWeather = (props: any) => {
                         }}
                     />
                 </div>
-                <div className="graphic"></div>
             </div>
         </div>
     )

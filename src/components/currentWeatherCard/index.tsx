@@ -30,13 +30,13 @@ const CurrentWeatherCard = (props: any) => {
     return (
         <>
             <div key={props.store.currentWeather.name}
-                 className='card-wrapper'
+                 className='card-wrapper card-wrapper_current'
                  onClick={() => openCurrentCard(props.store.currentWeather)}>
                 <div className='card-wrapper__place'>
                     Мое Местоположение
                 </div>
                 <div className='card-wrapper__temp'>
-                    {props.store.currentWeather.main.temp} &#8451;
+                    {props.store.currentWeather.main.temp.toFixed(0)} &#8451;
                 </div>
 
                 <div className='card-wrapper__icon'

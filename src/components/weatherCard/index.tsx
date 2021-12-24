@@ -51,7 +51,7 @@ const WeatherCard = (props: any) => {
                              }}
                         />
                     </div>
-                    <Btn onClick={() => deleteCard(item.id)}/>
+                    <Btn onClick={() => deleteCard(item.id)} title="×"/>
                 </div>
             )}
             <Modal onCancel={handlerModal} isOpen={isOpen} isAdding={false} title={title}/>

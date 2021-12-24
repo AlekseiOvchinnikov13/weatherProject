@@ -1,0 +1,24 @@
+@import "vars";
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+.App {
+  position: relative;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  min-height: 100vh;
+
+  font-size: calc(10px + 1vw);
+  text-align: center;
+
+  padding: 1em;
+
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: space-between;
+}
